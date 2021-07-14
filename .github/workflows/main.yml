@@ -32,3 +32,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN}}
           artifacts: "./module.zip, ./module.json"
           tag: ${{ steps.get-version.outputs.version }}
+          
