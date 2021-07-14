@@ -1,7 +1,7 @@
 import { J2TWindow } from "./J2TWindow.js";
 import { folderExists, isFoundry8, parseTable, isItem, isDnDItem, folderFactory, isRollable, evaluateDiceTerm, checkHTML, convertCsvToHtml, getItemType } from '../utils.js';
 /*something
-
+else
 */
 /**
  * Checks  what was right clicked via <li>, creates folders if neccessary and creates tables. This is the starting method of the module. 
