@@ -3,7 +3,7 @@ name: Module Builder
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -31,4 +31,4 @@ jobs:
           prerelease: false
           token: ${{ secrets.GITHUB_TOKEN}}
           artifacts: "./module.zip, ./module.json"
-          tag: 1.0.1
+          tag: ${{ steps.get-version.outputs.version }}
