@@ -1,0 +1,62 @@
+<div>
+    <div class="rwkDialogDiv">
+        <p>
+            Paste copied HTML into text area then hit "Convert!"
+        </p>
+    </div>
+
+    <div class="inputDescriptor importWindowDiv">HTML to import (CSV might work!)</div>
+
+    <div>
+        <textarea class="text-input" name="text" style="white-space: pre-wrap" id="text-input" rows="20"></textarea>
+    </div>
+
+    <div>
+        <label for="table-name" class="inputDescriptor"> Table Name :  </label>
+        <input class="text-input" type="text" id="table-name" name="table-name" placeholder="table name"/>
+    </div>
+
+    <div id="importEntitiesDiv" class="selectorDiv rwkDialogDiv">
+        <label for="importEntities" class="inputDescriptor"> Import table entities as : </label>
+        <select name="importEntities" id="importEntities" class="selectCombo">
+            <option value="Text" selected> Text </option>
+            <option value="Actor"> Actor </option>
+            <option value="Item"> Item </option>
+        </select>
+    </div>
+    <div id="searchForEntitiesDiv" class="rwkDialogDiv">
+        <p>If item already exists...</p>
+        <ol>
+            <li>
+                <input type="radio" id="keepItem" name="ifItemExists" value="keepItem" checked disabled/>
+                <label for="keepItem" class="inputDescriptor"> - Keep existing item</label>
+            </li>
+            <li>
+                <input type="radio" id="duplicateItem" name="ifItemExists" value="duplicateItem" disabled/>
+                <label for="duplicateItem" class="inputDescriptor"> - Duplicate item</label>
+            </li>
+            <li>
+                <input type="radio" id="replaceItem" name="ifItemExists" value="replaceItem" disabled/>
+                <label for="replaceItem" class="inputDescriptor"> - Replace existing item</label>
+            </li>
+        </ol>
+        
+    </div>
+    <div id="folderStructureDiv" class="selectorDiv rwkDialogDiv">
+        <label for="folderStructure" class="inputDescriptor"> Choose folder structure : </label>
+        <select name="folderStructure" id="folderStructure" class="selectCombo">
+            <option value="folder"> Single Folder </option>
+            <option value="none"> None </option>
+        </select>
+    </div>
+
+    <div id="tableOfItemsDiv" class="rwkDialogDiv">
+        <label for="tableOfItems" class="inputDescriptor"> Is this a table of items? : </label>
+        <input type="checkbox" id="tableOfItems" name="tableOfItems" value="tableOfItems"/>
+    </div>
+
+    <button id="submit" disabled> Convert! </button>
+    <p>
+        You can find the Github page <a href="https://github.com/QuantumBob/RWK-TOOLS">here</a>.
+    </p>
+</div>

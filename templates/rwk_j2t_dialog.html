@@ -1,0 +1,54 @@
+<div>
+    <div class="rwkDialogDiv">
+        <p>
+            Choose folder structuer and Roll Table type
+        </p>
+    </div>
+    <div class="rwkDialogDiv">
+        <p>
+            J2T has found
+        </p>
+        <p id="j2tFoundPara"></p>
+    </div>
+    <div id="importEntitiesDiv" class="selectorDiv rwkDialogDiv">
+        <label for="importEntities" class="inputDescriptor"> Import table entities as : </label>
+        <select name="importEntities" id="importEntities" class="selectCombo">
+            <option value="Text"> Text </option>
+            <option value="Actor"> Actor </option>
+            <option value="Item" selected> Item </option>
+        </select>
+    </div>
+    <div id="searchForEntitiesDiv" class="rwkDialogDiv">
+        <p>If item already exists...</p>
+        <ol>
+            <li>
+                <input type="radio" id="keepItem" name="ifItemExists" value="keepItem" checked disabled/>
+                <label for="keepItem" class="inputDescriptor"> - Keep existing item</label>
+            </li>
+            <li>
+                <input type="radio" id="duplicateItem" name="ifItemExists" value="duplicateItem" disabled/>
+                <label for="duplicateItem" class="inputDescriptor"> - Duplicate item</label>
+            </li>
+            <li>
+                <input type="radio" id="replaceItem" name="ifItemExists" value="replaceItem" disabled/>
+                <label for="replaceItem" class="inputDescriptor"> - Replace existing item</label>
+            </li>
+        </ol>
+        
+    </div>
+    <div id="folderStructureDiv" class="selectorDiv rwkDialogDiv">
+        <label for="folderStructure" class="inputDescriptor"> Choose folder structure : </label>
+        <select name="folderStructure" id="folderStructure" class="selectCombo">
+            <option value="folder"> Single Folder </option>
+            <option value="none"> None </option>
+        </select>
+    </div>
+    <div id="searchInSubfoldersDiv" class="rwkDialogDiv">
+        <label for="searchInSubfolders" class="inputDescriptor"> Search in subfolders : </label>
+        <input type="checkbox" id="searchInSubfolders" name="searchInSubfolders" value="searchInSubfolders"/>
+    </div>
+    <button id="submit"> Search! </button>
+    <p>
+        You can find the Github page <a href="https://github.com/QuantumBob/RWK-TOOLS">here</a>.
+    </p>
+</div>

@@ -1,0 +1,85 @@
+{
+    "RWKITEM":{
+        "ui":{
+            "context":{
+                "change":{
+                    "item-type": "Change Item Type"
+                }
+            }
+        }
+    },
+
+    "RWKTABLE": {
+        "notif": {
+            "title-required": "EasyTables require a Title",
+            "csv-required": "EasyTables require the Values field to be filled",
+            "tabledata-required": "EasyTables require the Table Data field to be filled",
+            "separator-required": "EasyTables require the Separator field to contain a single character",
+            "table-created": "EasyTable Created:"
+        },
+        "ui": {
+            "button-j2t-title": "Select Journals",
+            "button-tablepaste-title": "TablePaste",
+            "button-header": "RWKTable",
+            "dialog": {
+                "j2t": {
+                    "title": "Select Journals",
+                    "table-title": "Table Title",
+                    "table-description": "Table Description",
+                    "csv-data": "Values",
+                    "csv-data-tooltip": "Paste your values here, separated by the Separator character",
+                    "separator": "Separator",
+                    "separator-tooltip": "Change the separator character",
+                    "defaultcollection": "Default Entity",
+                    "defaultcollection-tooltip": "Any untagged entries will be checked against this entity type",
+                    "button": {
+                        "generate": "Generate",
+                        "cancel": "Cancel"
+                    }
+                },
+                "tablepaste": {
+                    "title": "EasyTable Table Paste Mode",
+                    "table-title": "Table Title",
+                    "table-description": "Table Description",
+                    "table-data": "Table Data - DO NOT include a table header here. Set the title above.",
+                    "table-data-tooltip": "Paste your table data here",
+                    "safemode":"Enable Safemode?",
+                    "safemode-tooltip":"Enable this if your pasted table isn't generating as expected.",
+                    "button": {
+                        "generate": "Generate",
+                        "cancel": "Cancel"
+                    }
+                },
+                "export": {
+                    "separator": {
+                        "title": "EasyTable Export",
+                        "prompt": "Export with Separator",
+                        "skip-weight": "Ignore Weights", 
+                        "skip-collection": "Ignore Entity Types",
+                        "button-ok": "OK"
+                    },
+                    "output": {
+                        "title": "EasyTable Export Complete",
+                        "separator-issue-head": "Your chosen separator was found in some results. Your table might not import correctly.",
+                        "separator-issue-hint": "Try using another separator that doesn't appear in the text, like a vertical pipe `|`",
+                        "separator-issue-none": "No issues found during export",
+                        "button-copy": "Copy",
+                        "button-close": "Close"
+                    }
+                }
+            },
+            "context": {
+                "search": {
+                    "table": "Search for Table",
+                    "tables": "Search for Tables"
+                }
+            }
+        },
+        "settings":{
+            "defaults": {
+                "title": "EasyTable",
+                "description": "An easy table. Optional {} denotes weight"
+            }
+        }
+    }
+}
