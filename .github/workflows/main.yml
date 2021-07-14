@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-    tags:
-    - '[0-9]+.[0-9]+.[0-9]+'
-    - '[0-9]+.[0-9]+.[0-9]+rc[0-9]+'
 
 jobs:
   build:
@@ -34,4 +31,4 @@ jobs:
           prerelease: false
           token: ${{ secrets.GITHUB_TOKEN}}
           artifacts: "./module.zip, ./module.json"
-          tag: ${{ steps.get-version.outputs.version }}
+          tag: 1.0.1
