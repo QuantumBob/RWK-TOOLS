@@ -31,4 +31,4 @@ jobs:
           prerelease: false
           token: ${{ secrets.GITHUB_TOKEN}}
           artifacts: "./module.zip, ./module.json"
-          tag: ${{ steps.get-version.outputs.version }}
+          tag: 3.0.0
