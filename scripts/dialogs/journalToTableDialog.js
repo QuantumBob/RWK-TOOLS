@@ -1,4 +1,4 @@
-import { journalToTableMain } from "./journals2Tables.js";
+import { journalToTableMain } from "../lib/journals2Tables.js";
 
 export class JournalToTableDialog extends Application {
 
@@ -12,7 +12,7 @@ export class JournalToTableDialog extends Application {
         return {
             ...super.defaultOptions,
             id: "rwk-j2t",
-            template: "modules/rwk-tools/templates/rwk_j2t_dialog.html",
+            template: "modules/rwk-tools/templates/journal_to_table.html",
             resizable: false,
             height: "auto",
             width: 400,
@@ -29,7 +29,9 @@ export class JournalToTableDialog extends Application {
         const keepItem = html.find("#keepItem");
         const duplicateItem = html.find("#duplicateItem");
         const replaceItem = html.find("#replaceItem");
-        const singleEntry = this.li.data("entity-id") ? true : false;
+        // const singleEntry = this.li.data("document-id") ? true : false;
+        const singleEntry = this.li.data("document-id") ? true : false;
+        const docID = this.li.data("document-id");
         if (singleEntry) {
             folderStructureSelector.val("none");
             html.find('#searchInSubfolders').prop('disabled', true);

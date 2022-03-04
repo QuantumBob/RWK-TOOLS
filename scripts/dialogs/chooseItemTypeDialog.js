@@ -12,7 +12,7 @@ export class ChooseItemTypeDialog extends Application {
         return {
             ...super.defaultOptions,
             id: "rwk-cit",
-            template: "modules/rwk-tools/templates/rwk_cit_dialog.html",
+            template: "modules/rwk-tools/templates/choose_item_type.html",
             resizable: false,
             height: "auto",
             width: 400,

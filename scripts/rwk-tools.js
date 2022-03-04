@@ -1,7 +1,7 @@
-import { TablePasteDialog } from "./lib/tablePaste.js"
+import { TablePasteDialog } from "./dialogs/tablePasteDialog.js"
 import { journals2Tables } from "./lib/journals2Tables.js"
 import { changeItemType } from "./lib/changeItemType.js"
-import { libWrapper } from "./shim.js";
+import { libWrapper } from "./utilities/shim.js";
 
 const mod = "rwk-tools";
 

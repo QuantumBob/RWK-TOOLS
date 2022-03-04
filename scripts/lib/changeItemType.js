@@ -1,11 +1,10 @@
-import { ChooseItemTypeDialog } from "./dialogs/chooseItemTypeDialog.js";
+import { ChooseItemTypeDialog } from "../dialogs/chooseItemTypeDialog.js";
 
 const changeItemTypeMain = async (li, itemType) => {
-    ui.notifications.info("Amazing!");
 
     let key;
 
-    if (key = li.data("entity-id")) {
+    if (key = li.data("document-id")) {
 
         let item = game.items.get(key);
 

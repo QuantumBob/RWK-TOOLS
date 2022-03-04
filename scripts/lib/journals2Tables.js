@@ -1,4 +1,4 @@
-import { JournalToTableDialog } from "./dialogs/journalToTableDialog.js";
+import { JournalToTableDialog } from "../dialogs/journalToTableDialog.js";
 import { folderExists, isFoundry8, parseTable, isItem, isDnDItem, folderFactory, isRollable, evaluateDiceTerm, checkHTML, convertCsvToHtml, getItemType } from '../utilities/utils.js';
 /*something else*/
 /**
@@ -11,7 +11,7 @@ const journalToTableMain = (li, options) => {
 
     let key;
 
-    if (key = li.data("entity-id")) {
+    if (key = li.data("document-id")) {
 
         processSingleEntry(key, options);
     }
@@ -20,7 +20,7 @@ const journalToTableMain = (li, options) => {
         processFoldersOfEntries(key, options);
     }
 
-    ui.notifications.info("Jouranl2Tables completed.");
+    ui.notifications.info("Jouranl To Tables completed");
 }
 
 /* TableResultData @ https://foundryvtt.com/api/data.TableResultData.html*/
@@ -233,8 +233,6 @@ const mapEntitiesToTables = async (tablesArray, options) => {
 
 const processPastedData = async (textContent, name, options) => {
 
-    ui.notifications.info("Pasted!");
-
     let tablesArray = [];
 
     const data = {};
@@ -252,7 +250,7 @@ const processPastedData = async (textContent, name, options) => {
     }
     createTables(tablesArray, options);
 
-    ui.notifications.info("Convert Pasted Complete!");
+    ui.notifications.info("Pasted Table Converted");
 }
 
 const processSingleEntry = async (key, options) => {

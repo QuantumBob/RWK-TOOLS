@@ -1,8 +1,8 @@
 import * as dic from "./dictionary.js";
 
 export const isFoundry8 = () => {
-    const foundryVersion = game.data.version;
-    return foundryVersion >= '0.8.0' && foundryVersion < '0.9.0';
+    const foundryVersion = game.version;
+    return foundryVersion >= '0.8.0';// && foundryVersion < '0.9.0';
 }
 /**
  * checks foundry folders and returns true if name exists in given directory
