@@ -1,6 +1,6 @@
-import { citMain } from "./ChangeItemType.js";
+import { changeItemTypeMain } from "../lib/changeItemType.js";
 
-export class CITWindow extends Application {
+export class ChooseItemTypeDialog extends Application {
 
 
     constructor(li) {
@@ -29,7 +29,7 @@ export class CITWindow extends Application {
             const itemType = itemTypeSelector.find('option:selected').val();
 
 
-            citMain(this.li, itemType);
+            changeItemTypeMain(this.li, itemType);
         });
     }
 }

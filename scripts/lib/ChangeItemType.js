@@ -1,6 +1,6 @@
-import { CITWindow } from "./CITWindow.js";
+import { ChooseItemTypeDialog } from "./dialogs/chooseItemTypeDialog.js";
 
-const citMain = async (li, itemType) => {
+const changeItemTypeMain = async (li, itemType) => {
     ui.notifications.info("Amazing!");
 
     let key;
@@ -27,8 +27,8 @@ const citMain = async (li, itemType) => {
 
 const changeItemType = (li) => {
 
-    new CITWindow(li).render(true);
+    new ChooseItemTypeDialog(li).render(true);
 
 }
 
-export { citMain, changeItemType }
+export { changeItemTypeMain, changeItemType }

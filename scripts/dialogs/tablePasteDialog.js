@@ -1,23 +1,19 @@
-import { j2tMain } from "./Journals2Tables.js";
+import { processPastedData } from "./journals2Tables.js";
 
-export class J2TWindow extends Application {
-
-
-    constructor(li) {
-        super();
-        this.li = li;
-    }
+// export default class TablePasteDialog extends Application {
+// revert to above if not working and remove {} around TablePasteDialog at bottom and in module.js
+class TablePasteDialog extends Application {
 
     static get defaultOptions() {
         return {
             ...super.defaultOptions,
-            id: "rwk-j2t",
-            template: "modules/rwk-tools/templates/rwk_j2t_dialog.html",
+            id: "rwk_paster",
+            template: "modules/rwk-tools/templates/rwk_paste_window.html",
             resizable: false,
             height: "auto",
             width: 400,
             minimizable: true,
-            title: "RWK J2T"
+            title: "Paste Window"
         }
     }
 
@@ -29,17 +25,22 @@ export class J2TWindow extends Application {
         const keepItem = html.find("#keepItem");
         const duplicateItem = html.find("#duplicateItem");
         const replaceItem = html.find("#replaceItem");
-        const singleEntry = this.li.data("entity-id") ? true : false;
-        if (singleEntry) {
-            folderStructureSelector.val("none");
-            html.find('#searchInSubfolders').prop('disabled', true);
-        }
+        const nameInput = html.find('#table-name');
+        const convertButton = html.find("#submit");
 
         if (importEntitiesSelector.find('option:selected').val() == "Actor" || importEntitiesSelector.find('option:selected').val() == "Item") {
             keepItem.prop('disabled', false);
             duplicateItem.prop('disabled', false);
             replaceItem.prop('disabled', false);
         }
+
+        nameInput.on('input', () => {
+            if (nameInput[0].value) {
+                convertButton.prop('disabled', false);
+            } else {
+                convertButton.prop('disabled', true);
+            }
+        })
 
         importEntitiesSelector.on('change', () => {
             let entityType = importEntitiesSelector.find('option:selected').val();
@@ -56,19 +57,24 @@ export class J2TWindow extends Application {
         });
 
         html.find("#submit").on('click', () => {
+            const textContent = html.find('#text-input')[0].value;
+            const name = html.find('#table-name')[0].value;
+
             const entityType = importEntitiesSelector.find('option:selected').val();
             const folderStructure = folderStructureSelector.find('option:selected').val();
             const ifItemExists = $("input:radio[name=ifItemExists]:checked").val() === undefined ? 'keepItem' : $("input:radio[name=ifItemExists]:checked").val();
-            const searchInSubfolders = html.find('#searchInSubfolders')[0].checked;
+            const tableOfItems = html.find('#tableOfItems')[0].checked;
 
             const settings = {};
             settings.entityType = entityType;
-            settings.folderStructure = folderStructure;
             settings.ifItemExists = ifItemExists;
-            settings.searchInSubfolders = searchInSubfolders;
-            settings.genericItems = true;
+            settings.folderStructure = folderStructure;
+            settings.searchInSubfolders = false;
+            settings.genericItems = tableOfItems;
 
-            j2tMain(this.li, settings);
+            processPastedData(textContent, name, settings);
         });
     }
 }
+
+export { TablePasteDialog }// remove and change stuff at top back if not working

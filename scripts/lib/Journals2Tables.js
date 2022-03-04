@@ -1,5 +1,5 @@
-import { J2TWindow } from "./J2TWindow.js";
-import { folderExists, isFoundry8, parseTable, isItem, isDnDItem, folderFactory, isRollable, evaluateDiceTerm, checkHTML, convertCsvToHtml, getItemType } from '../utils.js';
+import { JournalToTableDialog } from "./dialogs/journalToTableDialog.js";
+import { folderExists, isFoundry8, parseTable, isItem, isDnDItem, folderFactory, isRollable, evaluateDiceTerm, checkHTML, convertCsvToHtml, getItemType } from '../utilities/utils.js';
 /*something else*/
 /**
  * Checks  what was right clicked via <li>, creates folders if neccessary and creates tables. This is the starting method of the module. 
@@ -7,7 +7,7 @@ import { folderExists, isFoundry8, parseTable, isItem, isDnDItem, folderFactory,
  * @param {*} options
  * @returns nothing if there is an error 
  */
-const j2tMain = (li, options) => {
+const journalToTableMain = (li, options) => {
 
     ui.notifications.info("Wait for it!");
 
@@ -427,7 +427,7 @@ const formatCost = (cost, asGp = false) => {
 
 const journals2Tables = (li) => {
 
-    new J2TWindow(li).render(true);
+    new JournalToTableDialog(li).render(true);
 }
 
-export { j2tMain, journals2Tables, processPastedData }
+export { journalToTableMain, journals2Tables, processPastedData }
