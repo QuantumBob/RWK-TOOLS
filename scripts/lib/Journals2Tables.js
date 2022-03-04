@@ -9,8 +9,6 @@ import { folderExists, isFoundry8, parseTable, isItem, isDnDItem, folderFactory,
  */
 const journalToTableMain = (li, options) => {
 
-    ui.notifications.info("Wait for it!");
-
     let key;
 
     if (key = li.data("entity-id")) {
