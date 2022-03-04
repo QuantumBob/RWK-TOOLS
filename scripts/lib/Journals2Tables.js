@@ -166,7 +166,7 @@ const createTables = async (tablesArray, options) => {
             results: resultsArray,
             replacement: true,
             displayRoll: true,
-            img: "modules/RWK-TOOLS/images/scroll.webp",
+            img: "modules/rwk-tools/images/scroll.webp",
             folder: table.folder
         });
         await newTable.normalize();

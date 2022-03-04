@@ -12,7 +12,7 @@ export class J2TWindow extends Application {
         return {
             ...super.defaultOptions,
             id: "rwk-j2t",
-            template: "modules/RWK-TOOLS/templates/rwk_j2t_dialog.html",
+            template: "modules/rwk-tools/templates/rwk_j2t_dialog.html",
             resizable: false,
             height: "auto",
             width: 400,

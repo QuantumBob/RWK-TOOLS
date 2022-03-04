@@ -12,7 +12,7 @@ export class CITWindow extends Application {
         return {
             ...super.defaultOptions,
             id: "rwk-cit",
-            template: "modules/RWK-TOOLS/templates/rwk_cit_dialog.html",
+            template: "modules/rwk-tools/templates/rwk_cit_dialog.html",
             resizable: false,
             height: "auto",
             width: 400,

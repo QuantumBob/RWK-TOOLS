@@ -1,12 +1,14 @@
 import { processPastedData } from "./Journals2Tables.js";
 
-export default class PasteWindow extends Application {
+// export default class TablePasteDialog extends Application {
+// revert to above if not working and remove {} around TablePasteDialog at bottom and in module.js
+class TablePasteDialog extends Application {
 
     static get defaultOptions() {
         return {
             ...super.defaultOptions,
             id: "rwk_paster",
-            template: "modules/RWK-TOOLS/templates/rwk_paste_window.html",
+            template: "modules/rwk-tools/templates/rwk_paste_window.html",
             resizable: false,
             height: "auto",
             width: 400,
@@ -74,3 +76,5 @@ export default class PasteWindow extends Application {
         });
     }
 }
+
+export { TablePasteDialog }// remove and change stuff at top back if not working
