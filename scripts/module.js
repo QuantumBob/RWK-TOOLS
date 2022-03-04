@@ -64,7 +64,7 @@ Hooks.on("init", () => {
     //     }
     // }
 
-    baseFolder = JournalDirectory.prototype._getFolderContextOptions;
+    //baseFolder = JournalDirectory.prototype._getFolderContextOptions;
     // let newContextOption = {
     //     name: game.i18n.localize('RWKTABLE.ui.context.search.tables'),
     //     icon: '<i class="fas fa-search"></i>',
