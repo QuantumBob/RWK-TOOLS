@@ -5,6 +5,7 @@ import { libWrapper } from "./utilities/shim.js";
 
 const mod = "rwk-tools";
 
+// add listeners to init hook
 Hooks.on("init", () => {
 
     if (game.system.data.name !== "dnd5e") {
