@@ -1,7 +1,6 @@
 import { changeItemTypeMain } from "../lib/changeItemType.js";
 
-export class ChooseItemTypeDialog extends Application {
-
+export class ChangeItemTypeDialog extends Application {
 
     constructor(li) {
         super();
@@ -12,12 +11,12 @@ export class ChooseItemTypeDialog extends Application {
         return {
             ...super.defaultOptions,
             id: "rwk-cit",
-            template: "modules/rwk-tools/templates/choose_item_type.html",
+            template: "modules/rwk-tools/templates/change_item_type.html",
             resizable: false,
             height: "auto",
             width: 400,
             minimizable: true,
-            title: "RWK CIT"
+            title: "Change Item's Type"
         }
     }
 
@@ -27,7 +26,6 @@ export class ChooseItemTypeDialog extends Application {
         html.find("#submit").on('click', () => {
             const itemTypeSelector = html.find("#newItemTypes");
             const itemType = itemTypeSelector.find('option:selected').val();
-
 
             changeItemTypeMain(this.li, itemType);
         });

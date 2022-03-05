@@ -1,7 +1,5 @@
 import { processPastedData } from "../lib/journals2Tables.js";
 
-// export default class TablePasteDialog extends Application {
-// revert to above if not working and remove {} around TablePasteDialog at bottom and in module.js
 class TablePasteDialog extends Application {
 
     static get defaultOptions() {
@@ -13,7 +11,7 @@ class TablePasteDialog extends Application {
             height: "auto",
             width: 400,
             minimizable: true,
-            title: "Paste Window"
+            title: "Convert HTML Table"
         }
     }
 
@@ -77,4 +75,4 @@ class TablePasteDialog extends Application {
     }
 }
 
-export { TablePasteDialog }// remove and change stuff at top back if not working
+export { TablePasteDialog }

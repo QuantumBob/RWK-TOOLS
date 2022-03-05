@@ -2,7 +2,6 @@ import { journalToTableMain } from "../lib/journals2Tables.js";
 
 export class JournalToTableDialog extends Application {
 
-
     constructor(li) {
         super();
         this.li = li;
@@ -17,7 +16,7 @@ export class JournalToTableDialog extends Application {
             height: "auto",
             width: 400,
             minimizable: true,
-            title: "RWK J2T"
+            title: "Find Tables In Journal"
         }
     }
 

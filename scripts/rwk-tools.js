@@ -8,9 +8,19 @@ const mod = "rwk-tools";
 Hooks.on("init", () => {
 
     if (game.system.data.name !== "dnd5e") {
-        ui.notifications.info("RWK Tools needs DnD5e");
+        console.error("RWK Tools | This module needs DnD5e")
         return;
     }
+
+    libWrapper.register(mod, 'ItemDirectory.prototype._getEntryContextOptions', function (wrapped, ...args) {
+        const changeItemTypeContextMenu = {
+            name: game.i18n.localize('RWKITEM.ui.context.change.item-type'),
+            icon: '<i class="fas fa-search"></i>',
+            condition: game.user.isGM,
+            callback: changeItemType,
+        };
+        return wrapped(...args).concat(changeItemTypeContextMenu);
+    }, 'WRAPPER');
 
     libWrapper.register(mod, 'JournalDirectory.prototype._getEntryContextOptions', function (wrapped, ...args) {
         const searchTableContextOption = {
@@ -19,13 +29,7 @@ Hooks.on("init", () => {
             condition: game.user.isGM,
             callback: journals2Tables,
         };
-        const changeItemTypeContextMenu = {
-            name: game.i18n.localize('RWKITEM.ui.context.change.item-type'),
-            icon: '<i class="fas fa-search"></i>',
-            condition: game.user.isGM,
-            callback: changeItemType,
-        };
-        return wrapped(...args).concat(searchTableContextOption, changeItemTypeContextMenu);
+        return wrapped(...args).concat(searchTableContextOption);
     }, 'WRAPPER');
 
     libWrapper.register(mod, 'JournalDirectory.prototype._getFolderContextOptions', function (wrapped, ...args) {

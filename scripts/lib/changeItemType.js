@@ -1,4 +1,4 @@
-import { ChooseItemTypeDialog } from "../dialogs/chooseItemTypeDialog.js";
+import { ChangeItemTypeDialog } from "../dialogs/changeItemTypeDialog.js";
 
 const changeItemTypeMain = async (li, itemType) => {
 
@@ -26,7 +26,7 @@ const changeItemTypeMain = async (li, itemType) => {
 
 const changeItemType = (li) => {
 
-    new ChooseItemTypeDialog(li).render(true);
+    new ChangeItemTypeDialog(li).render(true);
 
 }
 
