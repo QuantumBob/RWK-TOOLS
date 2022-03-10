@@ -13,6 +13,26 @@ Hooks.on("init", () => {
         return;
     }
 
+    // keybinding to toggle sidebar with CTRL S
+    const { CONTROL } = KeyboardManager.MODIFIER_KEYS;
+    game.keybindings.register("rwk-tools", "toggleSidebar", {
+        name: "ToggleSidebar",
+        editable: [
+            { key: "KeyS", modifiers: [CONTROL] }
+        ],
+        onDown: () => {
+            if (canvas.ready) {
+                if (ui.sidebar._collapsed)
+                    ui.sidebar.expand();
+                else
+                    ui.sidebar.collapse();
+            }
+
+            return true;
+        },
+        restricted: true
+    });
+
     libWrapper.register(mod, 'ItemDirectory.prototype._getEntryContextOptions', function (wrapped, ...args) {
         const changeItemTypeContextMenu = {
             name: game.i18n.localize('RWKITEM.ui.context.change.item-type'),
