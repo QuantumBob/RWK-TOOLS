@@ -10,4 +10,4 @@ Right click a journal folder in the sidebar and choose "Search for Tables" to se
 Click the "RWK Table Import" button in the rolltable sidebar to bring up a dialog with a window in which a HTML table can be pasted. The output can be set and the result is a rolltable from the HTML. Useful to convert DnDBeyond tables into rolltables quickly. Just inspect the table on the DnDBeyond webpage, right click on the <table> element and click "copy -> copy element" and paste (CTRL_V) the table element into the paste window. Give the table a name then hit Convert!
 
 
-There is now a keyboard shortcut to toggle the Sidebar : CTRL+S
+There is now a keyboard shortcut to toggle the Sidebar : CTRL+S 
