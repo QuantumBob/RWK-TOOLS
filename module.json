@@ -4,8 +4,8 @@
   "description": "A bunch of tools for GMs",
   "author": "Rob Kirk",
   "version": "This is auto replaced",
-  "minimumCoreVersion": "0.8.3",
-  "compatibleCoreVersion": "0.8.6",
+  "minimumCoreVersion": "0.9.0",
+  "compatibleCoreVersion": "0.9.3",
   "dependencies": [],
   "esmodules": [
     "/scripts/rwk-tools.js"
