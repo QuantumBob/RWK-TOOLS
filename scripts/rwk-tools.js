@@ -5,6 +5,17 @@ import { libWrapper } from "./utilities/shim.js";
 
 const mod = "rwk-tools";
 
+// class exportSettings extends FormApplication {
+//     // lots of other things...
+//     getData() {
+//         return game.settings.get('myModuleName', 'myComplexSettingName');
+//     }
+//     _updateObject(event, formData) {
+//         const data = expandObject(formData);
+//         game.settings.set('myModuleName', 'myComplexSettingName', data);
+//     }
+// }
+
 // add listeners to init hook
 Hooks.on("init", () => {
 
@@ -12,6 +23,22 @@ Hooks.on("init", () => {
         console.error("RWK Tools | This module needs DnD5e")
         return;
     }
+
+    // game.settings.registerMenu("rwk-tools", "settings-export-menu", {
+    //     name: "",
+    //     label: "Export Settings",      // The text label used in the button
+    //     hint: "Export all settings to JSON file.",
+    //     icon: "fas fa-bars",               // A Font Awesome icon used in the submenu button
+    //     type: exportSettings,   // A FormApplication subclass
+    //     restricted: true                   // Restrict this submenu to gamemaster only?
+    // });
+    // game.settings.register("rwk-tools", "settings-export", {
+    //     scope: 'world',     // "world" = sync to db, "client" = local storage
+    //     config: false,       // false if you dont want it to show in module config
+    //     type: Object,       // Number, Boolean, String, Object
+    //     default: {},
+    // });
+
 
     // keybinding to toggle sidebar with CTRL S
     const { CONTROL } = KeyboardManager.MODIFIER_KEYS;
