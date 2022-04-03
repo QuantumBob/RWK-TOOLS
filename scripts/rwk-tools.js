@@ -1,20 +1,13 @@
 import { TablePasteDialog } from "./dialogs/tablePasteDialog.js"
+import { ItemPasteDialog } from "./dialogs/itemPasteDialog.js";
 import { journals2Tables } from "./lib/journals2Tables.js"
 import { changeItemType } from "./lib/changeItemType.js"
-import { libWrapper } from "./utilities/shim.js";
+// import { libWrapper } from "./utilities/shim.js";
 
 const mod = "rwk-tools";
 
-// class exportSettings extends FormApplication {
-//     // lots of other things...
-//     getData() {
-//         return game.settings.get('myModuleName', 'myComplexSettingName');
-//     }
-//     _updateObject(event, formData) {
-//         const data = expandObject(formData);
-//         game.settings.set('myModuleName', 'myComplexSettingName', data);
-//     }
-// }
+// if we wanted to expose something in the module to the global scope we so it as follows
+// globalThis.RWKTOOLS = {};
 
 // add listeners to init hook
 Hooks.on("init", () => {
@@ -101,9 +94,18 @@ Hooks.on("renderSidebarTab", async (app, html) => {
     }
 
     if (app?.options?.id === "tables" && game.user.isGM) {
-        let button = $("<div class='header-actions action-buttons flexrow'><button class='ddb-muncher'><i class='fas fa-scroll'></i> RWK Table Import</button></div>");
+        // let button = $("<div class='header-actions action-buttons flexrow'><button class='ddb-muncher'><i class='fas fa-scroll'></i> RWK Table Import</button></div>");
+        let button = $("<div class='header-actions action-buttons flexrow'><button class='rwk-import'><i class='fas fa-scroll'></i> RWK Table Import</button></div>");
         button.on('click', () => {
             new TablePasteDialog().render(true);
+        });
+        $(html).find(".directory-header").append(button);
+    }
+
+    if (app?.options?.id === "items" && game.user.isGM) {
+        let button = $("<div class='header-actions action-buttons flexrow'><button class='rwk-import'><i class='fas fa-scroll'></i> RWK DDB Import</button></div>");
+        button.on('click', () => {
+            new ItemPasteDialog().render(true);
         });
         $(html).find(".directory-header").append(button);
     }

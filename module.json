@@ -6,7 +6,12 @@
   "version": "This is auto replaced",
   "minimumCoreVersion": "0.9.0",
   "compatibleCoreVersion": "0.9.3",
-  "dependencies": [],
+  "dependencies": [ 
+  {
+    "name": "lib-wrapper",
+    "type": "module"
+  }
+],
   "esmodules": [
     "/scripts/rwk-tools.js"
   ],
@@ -20,6 +25,7 @@
       "path": "languages/en.json"
     }
   ],
+  "socket" :true,
     "url": "This is auto replaced",
     "manifest": "This is auto replaced",
     "download": "This is auto replaced"

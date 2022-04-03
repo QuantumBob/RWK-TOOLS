@@ -300,3 +300,32 @@ export const parseTable = (table, options) => {
     let result = filteredArray.map(mapRow(headings));
     return result;
 }
+
+export const parseItem = (data, options) => {
+
+    let item = {};
+    item.name = parseName(data.className);
+
+    //.getElementsByClassName(".ddb-statblock ddb-statblock-spell");
+    let statBlock = Array.prototype.find.call(data, function (element) {
+        if (element.nodeName === 'DIV')
+            return element;
+    });
+
+    //elements = data.children.getElementsByClassName(".more-info-content");
+    let content = Array.prototype.find.call(data, function (element) {
+        return element.nodeName === 'DIV';
+    });
+
+}
+
+const parseName = (data) => {
+    let names = data.split(' ');
+    let name = names.pop();
+    if (name.includes("spell")) {
+        return "No Name";
+    }
+    // let index = name.indexOf("-details");
+    name = name.substring(0, name.indexOf("-details")).replace("-", " ");
+    return name.replace(/^./, name[0].toUpperCase());
+}
