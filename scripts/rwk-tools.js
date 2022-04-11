@@ -84,7 +84,17 @@ Hooks.on("init", () => {
     }, 'WRAPPER');
 });
 
+Hooks.on("preCreateItem", (item, options, userId) => {
+    // only allow unique named items.
+    if (game.items.getName(item.name)) {
+        return false;
+    }
+});
+
+
+
 Hooks.on("renderSidebarTab", async (app, html) => {
+
     if (!game.user.isGM) {
         return;
     }
@@ -109,5 +119,4 @@ Hooks.on("renderSidebarTab", async (app, html) => {
         });
         $(html).find(".directory-header").append(button);
     }
-
 });
