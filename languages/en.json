@@ -1,4 +1,27 @@
 {
+    "RWKJOURNAL":{
+        "ui":{
+            "context":{
+                "merge":{
+                    "journals": "Merge this journal"
+                }
+            }
+        },
+        "dialog":{
+            "description":"Merge the previous journal with the one selected from the list.",
+            "help":"The journal selected from the sidebar will be kept, meaning it's links to mapnotes etc will be preserved.",
+            "keep-journal":"Choose whether to also keep the second merging journal (just in case...)",
+            "merge-journals":"Merge Journals",
+            "keep": "Keep",
+            "both":"Both",
+            "neither":"Neither",
+            "first":"First",
+            "second":"Second",
+            "journal":"Journal",
+            "journals":"Journals",
+            "search":"Search"
+        }
+    },
     "RWKITEM":{
         "ui":{
             "context":{
