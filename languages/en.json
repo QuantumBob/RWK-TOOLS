@@ -12,6 +12,7 @@
             "help":"The journal selected from the sidebar will be kept, meaning it's links to mapnotes etc will be preserved.",
             "keep-journal":"Choose whether to also keep the second merging journal (just in case...)",
             "merge-journals":"Merge Journals",
+            "merge":"Merge",
             "keep": "Keep",
             "both":"Both",
             "neither":"Neither",

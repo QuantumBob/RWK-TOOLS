@@ -31,9 +31,12 @@ export class MergeJournalsDialog extends FormApplication {
         let catHtml = [];
         let template;
 
-        let dialogHtml = await renderTemplate("modules/rwk-tools/templates/journalListHeader.html", {});
+        const clickedJournal = game.journal.get(MergeJournalsDialog.clickedJournalId);
+
+        let dialogHtml = await renderTemplate("modules/rwk-tools/templates/journalListHeader.html", { data: { name: clickedJournal.data.name, type: clickedJournal.type } });
 
         for (const journal of game.journal) {
+            if (journal.id === MergeJournalsDialog.clickedJournalId) continue;
             const group = journal.name.at(0).toUpperCase();
             template = await renderTemplate("modules/rwk-tools/templates/journalButton.html", {
                 data: {
@@ -144,11 +147,27 @@ export class MergeJournalsDialog extends FormApplication {
         /* If Monks Enhanced Journal is active load the classes required to render it. */
         if (game.modules.get("monks-enhanced-journal")?.active) {
 
+            let clickedMonkFlags = clickedJournal.data.flags["monks-enhanced-journal"];
+            let otherMonkFlags = otherJournal.data.flags["monks-enhanced-journal"];
+            /* if one journal is Enhanced Journal it can combine with anything */
+            /* otherwise journals must have the same type */
+            if (clickedMonkFlags.type !== "base" && otherMonkFlags.type !== "base")
+                if (clickedMonkFlags.type !== otherMonkFlags.type)
+                    return;
+
             let update = {};
             update._id = clickedJournal.data._id;
+            let clickedFlags = clickedJournal.data.flags;
+            let otherFlags = otherJournal.data.flags;
 
-            update.flags = mergeObject(clickedJournal.data.flags, otherJournal.data.flags, { overwrite: false });
-            update.flags["monks-enhanced-journal"].relationships = clickedJournal.data.flags["monks-enhanced-journal"].relationships.concat(otherJournal.data.flags["monks-enhanced-journal"].relationships);
+            update.flags = mergeObject(clickedFlags, otherFlags, { overwrite: false });
+
+            let keys = Object.keys(clickedMonkFlags);
+            keys.forEach((key, index) => {
+                if (Array.isArray(clickedMonkFlags[key])) {
+                    update.flags["monks-enhanced-journal"][key] = clickedMonkFlags[key].concat(otherMonkFlags[key]);
+                }
+            });
             const newContent = clickedJournal.data.content + "<hr>" + otherJournal.data.content;
             update.content = newContent;
 
