@@ -7,6 +7,7 @@ import { folderExists } from "./utilities/utils.js";
 import { DAScene } from "./dialogs/DAScene.js"
 
 const mod = "rwk-tools";
+let system;
 
 // if we wanted to expose something in the module to the global scope we so it as follows
 // globalThis.RWKTOOLS = {};
@@ -123,7 +124,11 @@ Hooks.on("renderSidebarTab", async (app, html) => {
         return;
     }
     if (game.system.data.name !== "dnd5e") {
-        ui.notifications.info("Journal2Tables needs DnD5e");
+        system = "dnd5e";
+    } else if (game.system.data.name !== "dnd5e") {
+        system = "pathinder";
+    } else {
+        ui.notifications.info("Journal2Tables needs DnD5e or Pathfinder 2e");
         return;
     }
 
