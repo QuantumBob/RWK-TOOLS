@@ -4,7 +4,7 @@ import { journals2Tables } from "./lib/journals2Tables.js"
 import { changeItemType } from "./lib/changeItemType.js"
 import { mergeJournals } from "./lib/mergeJournals.js"
 import { folderExists } from "./utilities/utils.js";
-// import { libWrapper } from "./utilities/shim.js";
+import { DAScene } from "./dialogs/DAScene.js"
 
 const mod = "rwk-tools";
 
@@ -100,6 +100,9 @@ Hooks.on("init", () => {
     //     };
     //     return wrapped(...args).concat(mergeJournalsContextOption);
     // }, 'WRAPPER');
+
+    // /* register the link click listener of the text editor */
+    // libWrapper.register(mod, "TextEditor.prototype.constructor._onClickContentLink", onLeftClickJournalLink, "MIXED");
 });
 
 Hooks.once('ready', () => {
@@ -140,10 +143,17 @@ Hooks.on("renderSidebarTab", async (app, html) => {
         });
         $(html).find(".directory-header").append(button);
     }
+
+    if (app?.options?.id === "scenes" && game.user.isGM) {
+        let button = $("<div class='header-actions action-buttons flexrow'><button class='rwk-import'><i class='fas fa-scroll'></i> Import DA Map</button></div>");
+        button.on('click', () => {
+            new DAScene().render(true);
+        });
+        $(html).find(".directory-header").append(button);
+    }
+
     /* change text colour of journals in list to black if background is light */
     if (app?.options?.id === "journal" && game.user.isGM) {
-
-        // let lis = $(html).find(".directory-list>li.folder");
 
         $(html).find(".directory-list>li.folder").each(function () {
             const bkColor = $(this).find(".folder-header").css("background-color");

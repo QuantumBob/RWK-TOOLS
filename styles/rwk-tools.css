@@ -33,10 +33,6 @@
     white-space: pre-wrap;
 }
 
-.rwk-icon{
-    font-size: large;
-}
-
 .collapsible {
     background-color: rgb(80, 80, 80);
     color: white;
@@ -91,7 +87,64 @@ li.folder.collapsed > .folder-header.dark-title h3 {
     color: #000;
 }
 
-/* li.folder.collapsed > .folder-header.dark-title h3 i {
-    font-size: 1.125em;
-} */
+.rwk-tools .file-picker {
+    flex: 0 0 24px;
+    line-height: 24px;
+    margin-top: 10px;
+    margin-left: 0px;
+    order: 99;
+}
 
+.rwk-tools .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.rwk-tools .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #f1f0ec;
+    color: black;
+    border-radius: 1px;
+    padding: 5px;
+    line-height: 1;
+    padding-top: 3px;
+    border-style: double;
+    font-style: normal;
+    font-weight: normal;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 14px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.rwk-tools .tooltip .tooltiptext.left {
+    top: 0px;
+    right: 105%;
+}
+
+.rwk-tools .tooltip .tooltiptext.right {
+    top: 0px;
+    right: 5%;
+}
+
+.rwk-tools .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.rwk-tools img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border: 0;
+}
+
+.large {
+    font-size: large;
+}

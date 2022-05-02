@@ -1,0 +1,78 @@
+{
+    "time" :{
+        "past" :[
+            "yesterday",
+            "a few days ago",
+            "last month",
+            "a few months ago",
+            "last year",
+            "a few years ago",
+            "a decade ago",
+            "a hundred years ago",
+            "many centuries ago",
+            "a millenium ago",
+            "many millenia ago"
+        ],
+        "future":[
+            "tommorrow",
+            "in a few days",
+            "in a week",
+            "a month from now",
+            "in a few months",
+            "in a year",
+            "in a few years",
+            "centuries from now"
+        ]
+    },
+    "location":[
+        "in",
+        "by",
+        "under",
+        "above",
+        "near",
+        "close to",
+        "some way from"
+    ],
+    "place":[
+        "a dark forest",
+        "a farie forest",
+        "a wide river",
+        "a small stream",
+        "a large mountain",
+        "a deep gourge"
+    ],
+    "age":[
+        "an old",
+        "a young",
+        "a very young",
+        "a middle aged",
+        "a small",
+        "a baby"
+    ],
+    "person":[
+        "king",
+        "queen",
+        "noble",
+        "baron",
+        "knight",
+        "lord",
+        "lady",
+        "count",
+        "servant",
+        "peasant",
+        "slave",
+        "merchant",
+        "criminal",
+        "monster",
+        "demon",
+        "dog",
+        "horse"
+    ]
+    ,
+    "verb":{
+
+    },
+    "subject":{
+
+    }
+}
