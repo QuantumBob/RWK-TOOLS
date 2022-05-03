@@ -125,7 +125,7 @@ Hooks.on("renderSidebarTab", async (app, html) => {
     }
     if (game.system.data.name !== "dnd5e") {
         system = "dnd5e";
-    } else if (game.system.data.name !== "dnd5e") {
+    } else if (game.system.data.name !== "pf2e") {
         system = "pathinder";
     } else {
         ui.notifications.info("Journal2Tables needs DnD5e or Pathfinder 2e");
