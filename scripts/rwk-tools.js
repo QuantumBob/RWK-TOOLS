@@ -35,7 +35,6 @@ Hooks.on("init", () => {
     //     default: {},
     // });
 
-
     // keybinding to toggle sidebar with CTRL S
     const { CONTROL } = KeyboardManager.MODIFIER_KEYS;
     game.keybindings.register("rwk-tools", "toggleSidebar", {

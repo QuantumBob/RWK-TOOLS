@@ -162,7 +162,6 @@ export const convertCsvToHtml = (data) => {
 }
 
 
-
 export const genericType = (type) => {
     switch (type.toLowerCase()) {
         case "item":
