@@ -108,6 +108,15 @@ Hooks.on("init", () => {
 Hooks.once('ready', () => {
     if (!game.modules.get('lib-wrapper')?.active && game.user.isGM)
         ui.notifications.error("Module Rwk-Tools requires the 'libWrapper' module. Please install and activate it.");
+
+    if (game.system.data.name === "dnd5e") {
+        system = "dnd5e";
+    } else if (game.system.data.name === "pf2e") {
+        system = "pathinder";
+    } else {
+        ui.notifications.info("Journal2Tables needs DnD5e or Pathfinder 2e");
+        return;
+    }
 });
 
 Hooks.on("preCreateItem", (item, options, userId) => {
@@ -122,14 +131,14 @@ Hooks.on("renderSidebarTab", async (app, html) => {
     if (!game.user.isGM) {
         return;
     }
-    if (game.system.data.name !== "dnd5e") {
-        system = "dnd5e";
-    } else if (game.system.data.name !== "pf2e") {
-        system = "pathinder";
-    } else {
-        ui.notifications.info("Journal2Tables needs DnD5e or Pathfinder 2e");
-        return;
-    }
+    // if (game.system.data.name === "dnd5e") {
+    //     system = "dnd5e";
+    // } else if (game.system.data.name === "pf2e") {
+    //     system = "pathinder";
+    // } else {
+    //     ui.notifications.info("Journal2Tables needs DnD5e or Pathfinder 2e");
+    //     return;
+    // }
 
     if (app?.options?.id === "tables" && game.user.isGM) {
         // let button = $("<div class='header-actions action-buttons flexrow'><button class='ddb-muncher'><i class='fas fa-scroll'></i> RWK Table Import</button></div>");
